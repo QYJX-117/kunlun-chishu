@@ -1,0 +1,175 @@
+// ==========================================
+// 昆仑驰枢 —— 暗色科技风主题
+// ==========================================
+
+// 主背景色（整体上调明度，减少压抑感）
+$bg-primary: #0D2945;
+$bg-deep: #081A30;
+$bg-sidebar: #0F2E50;
+$bg-card: rgba(18, 46, 76, 0.82);
+$bg-card-solid: #15325A;
+$bg-hover: #1B3F6B;
+
+// 暖色能源
+$gold: #F5C27A;
+$gold-warm: #FFB357;
+$gold-light: #FFD89C;
+$orange-energy: #FF9D2E;
+
+// 状态色
+$green: #27C46B;
+$green-dark: #1F9D57;
+$orange: #FFAA33;
+$red: #FF4D4F;
+$red-dark: #D9363E;
+$blue: #3B82F6;
+$blue-light: #60A5FA;
+
+// 文字
+$text-primary: #F5F7FA;
+$text-secondary: #D7E3F4;
+$text-description: #9FB3C8;
+$text-disabled: #60758A;
+
+// ========== Element Plus 暗色变量覆盖 ==========
+:root {
+  --el-bg-color: #{$bg-primary};
+  --el-bg-color-overlay: #{$bg-card};
+  --el-bg-color-page: #{$bg-primary};
+  --el-text-color-primary: #{$text-primary};
+  --el-text-color-regular: #{$text-secondary};
+  --el-text-color-secondary: #{$text-description};
+  --el-border-color: rgba(255, 255, 255, 0.08);
+  --el-border-color-light: rgba(255, 255, 255, 0.06);
+  --el-border-color-lighter: rgba(255, 255, 255, 0.04);
+  --el-fill-color: rgba(255, 255, 255, 0.04);
+  --el-fill-color-light: rgba(255, 255, 255, 0.06);
+  --el-color-primary: #{$blue};
+  --el-color-primary-light-3: #{$blue-light};
+  --el-color-success: #{$green};
+  --el-color-warning: #{$orange};
+  --el-color-danger: #{$red};
+  --el-disabled-text-color: #{$text-disabled};
+}
+
+// ========== 全局样式 ==========
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+  background: $bg-primary;
+  color: $text-primary;
+  font-family: 'HarmonyOS Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+// ========== 卡片玻璃拟态 ==========
+.glass-card {
+  background: $bg-card;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(80, 140, 255, 0.06);
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(245, 194, 122, 0.4);
+  }
+}
+
+// ========== 暖金高亮文字 ==========
+.gold-text {
+  color: $gold;
+  text-shadow: 0 0 12px rgba(245, 194, 122, 0.35);
+}
+
+// ========== 统计数字字体 ==========
+.stat-number {
+  font-family: 'DIN', 'Bahnschrift', 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 28px;
+  color: $text-primary;
+}
+
+// ========== Element Plus 组件覆盖 ==========
+.el-menu {
+  border-right: none !important;
+}
+
+.el-card {
+  background: $bg-card !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+}
+
+.el-table {
+  --el-table-bg-color: transparent;
+  --el-table-tr-bg-color: transparent;
+  --el-table-header-bg-color: rgba(255, 255, 255, 0.04);
+  --el-table-row-hover-bg-color: rgba(255, 255, 255, 0.06);
+  --el-table-border-color: rgba(255, 255, 255, 0.06);
+}
+
+.el-drawer {
+  --el-drawer-bg-color: #{$bg-card-solid};
+}
+
+.el-dialog {
+  --el-dialog-bg-color: #{$bg-card-solid};
+}
+
+.el-select-dropdown,
+.el-picker-panel,
+.el-dropdown-menu {
+  background: #{$bg-card-solid} !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.el-pagination button,
+.el-pager li {
+  background: transparent !important;
+  color: $text-secondary !important;
+}
+
+.el-pager li.is-active {
+  background: $blue !important;
+  color: #fff !important;
+}
+
+.el-input__wrapper,
+.el-textarea__inner,
+.el-select .el-input__wrapper {
+  background: rgba(255, 255, 255, 0.04) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset !important;
+}
+
+// ========== 地图容器 ==========
+.map-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+// ========== 滚动条 ==========
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
